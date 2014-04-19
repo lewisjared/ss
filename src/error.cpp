@@ -45,7 +45,7 @@ void do_log_to_console(int error_code, const string& error) {
 #endif
 }
 
-#if defined(WIN32)
+#if defined(WIN32) && !defined(NDEBUG)
 void do_log_do_dbg_wnd(int error_code, const string& error) {
     ostringstream out;
     out << TTEXT("SS: ") << error_code << TTEXT("/") << error << TTEXT("\n");
